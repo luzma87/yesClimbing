@@ -46,14 +46,17 @@
 {{ HTML::script('assets/js/plugins/jquery-validation-1.13.1/dist/localization/messages_es.min.js') }}
 
 <script type="text/javascript">
+
+    var $form = $("#frmLogin");
+
     function doSubmit() {
-        if($("#frmLogin").valid()) {
+        if($form.valid()) {
             $("#btnSubmit").button('loading');
-            $("#frmLogin").submit();
+            $form.submit();
         }
     }
     $(function() {
-        $("#frmLogin").validate({
+        $form.validate({
             errorElement:"div",
             errorClass: "label label-danger",
             errorPlacement: function(error, element) {

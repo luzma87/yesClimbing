@@ -4,14 +4,13 @@
         <meta charset="utf-8">
 
         {{ HTML::style('assets/bootstrap-3.3.0/css/bootstrap.min.css') }}
-        {{ HTML::style('assets/bootstrap-3.3.0/css/bootstrap-theme-darkly.min.css') }}
-        {{ HTML::style('assets/bootstrap-3.3.0/js/bootstrap.min.js') }}
+        {{ HTML::style('assets/bootstrap-3.3.0/css/bootstrap-theme-cerulean.min.css') }}
 
         {{ HTML::style('assets/font-awesome-4.2.0/css/font-awesome.min.css') }}
 
-         {{ HTML::style('assets/js/jquery-ui-1.11.2.custom/jquery-ui.min.css') }}
-         {{ HTML::style('assets/js/jquery-ui-1.11.2.custom/jquery-ui.structure.min.css') }}
-         {{ HTML::style('assets/js/jquery-ui-1.11.2.custom/jquery-ui.theme.min.css') }}
+        {{ HTML::style('assets/js/jquery-ui-1.11.2.custom/jquery-ui.min.css') }}
+        {{ HTML::style('assets/js/jquery-ui-1.11.2.custom/jquery-ui.structure.min.css') }}
+        {{ HTML::style('assets/js/jquery-ui-1.11.2.custom/jquery-ui.theme.min.css') }}
 
         <link rel="apple-touch-icon" sizes="57x57" href="{{ URL::asset('assets/images/favicons/apple-touch-icon-57x57.png') }}">
         <link rel="apple-touch-icon" sizes="114x114" href="{{ URL::asset('assets/images/favicons/apple-touch-icon-114x114.png') }}">
@@ -40,7 +39,10 @@
 
        @yield('footer')
 
-     {{ HTML::script('assets/js/jquery-ui-1.11.2.custom/jquery-1.11.1.min.js') }}
-     {{ HTML::script('assets/js/jquery-ui-1.11.2.custom/jquery-ui.min.js') }}
+        {{ HTML::script('assets/js/jquery-ui-1.11.2.custom/jquery-1.11.1.min.js') }}
+        {{ HTML::script('assets/js/jquery-ui-1.11.2.custom/jquery-ui.min.js') }}
+        {{ HTML::script('assets/bootstrap-3.3.0/js/bootstrap.min.js') }}
+
+       @yield('scripts')
     </body>
 </html>
