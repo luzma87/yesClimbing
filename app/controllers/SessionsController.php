@@ -17,9 +17,9 @@ class SessionsController extends BaseController {
 
     public function store() {
         if(Auth::attempt(Input::only('email', 'password'))) {
-            return "Welcome, " . Auth::user()->username;
+            return Redirect::route('paginas.index');
         }
-        return Redirect::back()->withInput();
+        return Redirect::back()->withInput()->with('error', 'No se encontró el nombre de usuario o contraseña')->with('email', Input::get('email'));
     }
 
     public function destroy() {

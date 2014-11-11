@@ -1,16 +1,21 @@
 <?php
 
-class QuestionsController extends \BaseController {
+class PaginasController extends \BaseController {
+
+    protected $pagina;
+
+    public function __construct(Pagina $pagina) {
+        $this->pagina = $pagina;
+    }
 
     /**
      * Display a listing of the resource.
      *
-     * @param int $userId
-     *
      * @return Response
      */
-    public function index($userId) {
-        return "Displaying all questions for user " . $userId;
+    public function index() {
+        $paginas = $this->pagina->all();
+        return View::make('paginas.index', ['paginas' => $paginas]);
     }
 
 
@@ -20,7 +25,7 @@ class QuestionsController extends \BaseController {
      * @return Response
      */
     public function create() {
-        return "Displaying create form";
+        return View::make('paginas.create');
     }
 
 
@@ -30,23 +35,25 @@ class QuestionsController extends \BaseController {
      * @return Response
      */
     public function store() {
-        // POST /questions para el insert
-
-//        return Redirect::to('/questions');
-        return Redirect::route('questions.index');
+        $this->pagina->email = Input::get('email');
+        $this->pagina->password = Hash::make(Input::get('password'));
+        if(!$this->pagina->isValid()) {
+            return Redirect::back()->withInput()->withErrors($this->pagina->errors);
+        }
+        $this->pagina->save();
+        return Redirect::route('paginas.index');
     }
 
 
     /**
      * Display the specified resource.
      *
-     * @param  int $userId
-     * @param  int $questionId
+     * @param $paginaname
      * @return Response
      */
-    public function show($userId, $questionId) {
-        // GET -> questions/id
-        return "show specific question " . $questionId . " from specific user " . $userId;
+    public function show($email) {
+        $pagina = $this->pagina->whereEmail($email)->first();
+        return View::make('paginas.show', ['pagina' => $pagina]);
     }
 
 
@@ -57,8 +64,7 @@ class QuestionsController extends \BaseController {
      * @return Response
      */
     public function edit($id) {
-        // GET -> /questions/id/edit
-        return "display form to  edit existing record";
+        //
     }
 
 
@@ -69,7 +75,7 @@ class QuestionsController extends \BaseController {
      * @return Response
      */
     public function update($id) {
-        // PUT/PATCH /questions/id -> update record
+        //
     }
 
 
@@ -80,7 +86,7 @@ class QuestionsController extends \BaseController {
      * @return Response
      */
     public function destroy($id) {
-        // DELETE /questions/id -> delete record
+        //
     }
 
 

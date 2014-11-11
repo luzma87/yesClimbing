@@ -5,7 +5,7 @@ use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class User extends Eloquent implements UserInterface, RemindableInterface {
+class Pagina extends Eloquent implements UserInterface, RemindableInterface {
 
     use UserTrait, RemindableTrait;
 
@@ -14,8 +14,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 //    protected $guarded; //campos no mass assigned
 
     public static $rules = [
-        'email' => 'required',
-        'password' => 'required'
+        'nombre' => 'required'
     ];
 
     public $errors;
@@ -25,14 +24,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
      *
      * @var string
      */
-    protected $table = 'users';
-
-    /**
-     * The attributes excluded from the model's JSON form.
-     *
-     * @var array
-     */
-    protected $hidden = array('password', 'remember_token');
+    protected $table = 'paginas';
 
     public function isValid() {
         $validation = Validator::make($this->attributes, static::$rules);

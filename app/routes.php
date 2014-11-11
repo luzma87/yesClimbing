@@ -65,7 +65,11 @@
 //Route::get('users', 'UsersController@index');
 //Route::get('users/{username}', 'UsersController@show');
 
-Route::get('/', 'SessionsController@create');
+//Route::get('/', 'SessionsController@create');
+
+Route::get('/', function () {
+    return View::make('enConstruccion');
+});
 
 Route::get('login', 'SessionsController@create');
 Route::get('logout', 'SessionsController@destroy');
@@ -74,9 +78,11 @@ Route::resource('sessions', 'SessionsController');
 
 Route::resource('users', 'UsersController');
 
+Route::resource('paginas', 'PaginasController');
+
 Route::get('admin', function () {
     return 'Admin page';
 })->before('auth');
 
-Route::resource('users.questions', 'QuestionsController');
+//Route::resource('users.questions', 'QuestionsController');
 //Route::resource('questions', 'QuestionsController');

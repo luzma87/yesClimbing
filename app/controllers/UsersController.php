@@ -39,10 +39,9 @@ class UsersController extends \BaseController {
 //        if($validation->fails()) {
 //            return Redirect::back()->withInput()->withErrors($validation->messages());
 //        }
-        $input = Input::all();
-        $this->user->username = Input::get('username');
-        $this->user->password = Hash::make(Input::get('password'));
+//        $input = Input::all();
         $this->user->email = Input::get('email');
+        $this->user->password = Hash::make(Input::get('password'));
         if(!$this->user->isValid()) {
             return Redirect::back()->withInput()->withErrors($this->user->errors);
         }
@@ -62,8 +61,8 @@ class UsersController extends \BaseController {
      * @param $username
      * @return Response
      */
-    public function show($username) {
-        $user = $this->user->whereUsername($username)->first();
+    public function show($email) {
+        $user = $this->user->whereEmail($email)->first();
         return View::make('users.show', ['user' => $user]);
     }
 
