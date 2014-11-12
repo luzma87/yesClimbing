@@ -11,6 +11,7 @@
         {{ HTML::style('assets/js/jquery-ui-1.11.2.custom/jquery-ui.min.css') }}
         {{ HTML::style('assets/js/jquery-ui-1.11.2.custom/jquery-ui.structure.min.css') }}
         {{ HTML::style('assets/js/jquery-ui-1.11.2.custom/jquery-ui.theme.min.css') }}
+        {{ HTML::style('assets/css/estilos.css') }}
 
         <link rel="apple-touch-icon" sizes="57x57" href="{{ URL::asset('assets/images/favicons/apple-touch-icon-57x57.png') }}">
         <link rel="apple-touch-icon" sizes="114x114" href="{{ URL::asset('assets/images/favicons/apple-touch-icon-114x114.png') }}">
