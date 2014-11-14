@@ -79,6 +79,7 @@ Route::resource('sessions', 'SessionsController');
 Route::resource('users', 'UsersController');
 
 Route::resource('paginas', 'PaginasController');
+Route::post('paginas/validarNombre', 'PaginasController@validarNombre');
 
 Route::get('admin', function () {
     return 'Admin page';

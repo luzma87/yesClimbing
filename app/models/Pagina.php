@@ -14,7 +14,7 @@ class Pagina extends Eloquent implements UserInterface, RemindableInterface {
 //    protected $guarded; //campos no mass assigned
 
     public static $rules = [
-        'nombre' => 'required'
+        'nombre' => array('required')
     ];
 
     public $errors;

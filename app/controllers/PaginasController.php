@@ -8,6 +8,11 @@ class PaginasController extends \BaseController {
         $this->pagina = $pagina;
     }
 
+    public function validarNombre() {
+        Log::error('Something is really going wrong.');
+        return Input::get("id") . " " . Input::get("nombre");
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -25,7 +30,8 @@ class PaginasController extends \BaseController {
      * @return Response
      */
     public function create() {
-        return View::make('paginas.create');
+        $paginas = $this->pagina->all();
+        return View::make('paginas.create', ['paginas' => $paginas]);
     }
 
 
@@ -35,8 +41,8 @@ class PaginasController extends \BaseController {
      * @return Response
      */
     public function store() {
-        $this->pagina->email = Input::get('email');
-        $this->pagina->password = Hash::make(Input::get('password'));
+        $this->pagina->nombre = Input::get('nombre');
+        $this->pagina->descripcion = Input::get('descripcion');
         if(!$this->pagina->isValid()) {
             return Redirect::back()->withInput()->withErrors($this->pagina->errors);
         }
@@ -48,12 +54,13 @@ class PaginasController extends \BaseController {
     /**
      * Display the specified resource.
      *
-     * @param $paginaname
+     * @param $nombre
      * @return Response
      */
-    public function show($email) {
-        $pagina = $this->pagina->whereEmail($email)->first();
-        return View::make('paginas.show', ['pagina' => $pagina]);
+    public function show($nombre) {
+        $pagina = $this->pagina->whereNombre($nombre)->first();
+        $paginas = $this->pagina->all();
+        return View::make('paginas.show', ['pagina' => $pagina, 'paginas' => $paginas]);
     }
 
 
