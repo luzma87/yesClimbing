@@ -19,12 +19,23 @@
             <a href="#" class="btn-menu-horizontal col-lg-2 col-md-2 col-sm-2 col-xs-12 ui-corner-all">CONTACTO</a>
         </div>
     </div>
-
+    <div class="row info-row hidden-xs "   >
+        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-10  col-lg-offset-1  col-md-offset-1 col-sm-offset-1 col-xs-offset-1 info-text">
+            Cumbre Illiniza Sur 5248 msnm, Ciudad Encantada
+        </div>
+        <div class="col-lg-3 col-md-3  col-sm-3  hidden-xs  info-icos">
+            <img src="{{ URL::asset('assets/images/iconos.PNG') }}"  style="height: 90%" >
+        </div>
+    </div>
 
 </div>
+
 <div class="row bottom-row" >
-    <div class="col-lg-4 col-lg-offset-1">
-        Cultural and adventure!!
+    <div class="col-lg-3 col-xs-12  col-lg-offset-1 col-xs-offset-1" style="text-align: left;padding-left: 0px">
+        Cultural and adventure!!!
+    </div>
+    <div class="col-lg-6  col-lg-offset-1  hidden-xs" style="text-align: right">
+        Ecuador and South America Tour Operator
     </div>
 </div>
 @stop

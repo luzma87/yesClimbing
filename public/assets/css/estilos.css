@@ -12,6 +12,7 @@
     padding: 0px;
     position: relative;
     min-width: 370px;
+    display: block;
 }
 .logo{
     border: 1px solid #000000;
@@ -23,6 +24,7 @@
 }
 .upper-row{
     margin-top: -20px;
+
 }
 .menu-horizontal{
     font-size: 11px;
@@ -59,7 +61,7 @@
 @media (min-width: 1200px ) {
 
     .banner{
-        height: 480px;
+        height: 485px;
     }
 }
 @media (max-width: 990px ) {
@@ -82,7 +84,7 @@
         margin-bottom: 5px;
     }
     .banner{
-        height: 310px;
+        height: 282px;
         min-width: 680px;
     }
 }
@@ -91,7 +93,7 @@
         margin-bottom: 5px;
     }
     .banner{
-        height: 310px;
+        height: 258px;
         min-width: 620px;
     }
 }
@@ -100,7 +102,7 @@
         margin-bottom: 5px;
     }
     .banner{
-        height: 310px;
+        height: 234px;
         min-width: 560px;
     }
 }
@@ -109,7 +111,7 @@
         margin-bottom: 5px;
     }
     .banner{
-        height: 310px;
+        height: 210px;
         min-width: 500px;
     }
 }
@@ -118,7 +120,7 @@
 @media (max-width: 375px ) {
 
     .banner{
-        height: 150px;
+        height: 152px;
         min-width: 370px;
     }
 }
@@ -129,4 +131,35 @@
     background: #D11317;
     color: #ffffff;
     min-width: 370px;
+    font-size: 20px;
+
+
+}
+.info-row{
+
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    bottom: 8px;
+    color: #000000;
+    min-width: 370px;
+    font-size: 14px;
+    width: 100%;
+
+}
+.info-text{
+    background: #fff;
+    color: #787878;
+    padding: 7px;
+    padding-left: 10px;
+    height: 35px;
+    font-weight: bold;
+}
+.info-icos{
+    background: #fff;
+    color: #000000;
+    text-align: right;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 35px;
 }
